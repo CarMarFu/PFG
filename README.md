@@ -1,4 +1,5 @@
-# Proyecto Fin de Grado - Desarrollo de un algoritmo de machine learning para el control de una prótesis de mano mediante señales electromiográficas
+# Proyecto Fin de Grado
+## Desarrollo de un algoritmo de machine learning para el control de una prótesis de mano mediante señales electromiográficas
 
 El presente proyecto se enfoca en el desarrollo de un algoritmo predictivo mediante machine learning que, dada una señal de electromiografía de la región del antebrazo, sea capaz de predecir el movimiento deseado y, en última instancia, controlar una prótesis de mano a través de simulación. Este enfoque busca aprovechar las capacidades de extrapolación del algoritmo para ejecutar movimientos nuevos (no vistos durante el entrenamiento), adaptarse a situaciones ruidosas y permitir holgura en la disposición de los electrodos, facilitando su uso.
 
