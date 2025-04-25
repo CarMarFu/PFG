@@ -24,14 +24,13 @@ def get_video():
 arduino = serial.Serial("/dev/ttyACM0", 9600, timeout=1)
 time.sleep(2)
 
-arduino.write(b"H")
-time.sleep(1)
-arduino.write(b"L")
-
-
 output_filename = get_next_filename()
 fourcc = cv2.VideoWriter_fourcc(*"mp4v")
 output_video = cv2.VideoWriter(output_filename, fourcc, 50.0, (640, 480))
+
+arduino.write(b"H")
+time.sleep(1)
+arduino.write(b"L")
 
 while True:
     frame = get_video()
