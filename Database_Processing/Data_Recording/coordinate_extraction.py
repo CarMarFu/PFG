@@ -5,6 +5,7 @@ from mediapipe.tasks.python import vision
 from mediapipe.framework.formats import landmark_pb2
 import cv2
 import os
+from pathlib import Path
 
 
 def image_recognition_get_csv(file_path):
@@ -12,6 +13,7 @@ def image_recognition_get_csv(file_path):
         raise FileNotFoundError(f"El archivo de video {file_path} no existe.")
 
     MODEL_PATH = "./hand_landmarker.task"
+    FILE_NAME = PATH(file_path).stem
 
     # initialize image recognition model
     base_options = python.BaseOptions(model_asset_path=MODEL_PATH)
@@ -25,7 +27,7 @@ def image_recognition_get_csv(file_path):
     fps = int(video_data.get(cv2.CAP_PROP_FPS))
     width = int(video_data.get(cv2.CAP_PROP_FRAME_WIDTH))
     height = int(video_data.get(cv2.CAP_PROP_FRAME_HEIGHT))
-    output_path = file_path + "_processed.mp4"
+    output_path = "./VIDEO_Export/" + FILE_NAME + "_processed.mp4"
     fourcc = cv2.VideoWriter_fourcc(*"mp4v")
     out = cv2.VideoWriter(output_path, fourcc, fps, (width, height))
 
@@ -72,7 +74,8 @@ def image_recognition_get_csv(file_path):
     cv2.destroyAllWindows()
 
     coord_dataframe = pd.DataFrame(coord_data)
-    csv_path = file_path + "processed.csv"
+    csv_path = "./VIDEO_Export/" + FILE_NAME + "_processed.csv"
+
     coord_dataframe.to_csv(csv_path, index=False)
     # returns the csv too
     return coord_dataframe

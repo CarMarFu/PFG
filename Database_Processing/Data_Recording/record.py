@@ -5,7 +5,7 @@ import time
 import os
 
 
-def get_next_filename(folder="video_data", prefix="", extension=".mp4", digits=6):
+def get_next_filename(folder="./VIDEO_Raw/", prefix="", extension=".mp4", digits=6):
     os.makedirs(folder, exist_ok=True)
     i = 1
     while True:
