@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<Montage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ReferenceType>Bipolar</ReferenceType>
+  <Channels>
+    <string>1</string>
+    <string>3</string>
+    <string>5</string>
+    <string>7</string>
+    <string>9</string>
+  </Channels>
+  <RefChannels>
+    <string>2</string>
+    <string>4</string>
+    <string>6</string>
+    <string>8</string>
+    <string>10</string>
+  </RefChannels>
+  <GridRows>0</GridRows>
+  <LaplaceNeighbors>0</LaplaceNeighbors>
+  <MenuText>bipolar_analyzer</MenuText>
+  <HelpText />
+</Montage>
