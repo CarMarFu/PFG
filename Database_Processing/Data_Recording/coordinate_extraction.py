@@ -13,7 +13,7 @@ def image_recognition_get_csv(file_path):
         raise FileNotFoundError(f"El archivo de video {file_path} no existe.")
 
     MODEL_PATH = "./hand_landmarker.task"
-    FILE_NAME = PATH(file_path).stem
+    FILE_NAME = Path(file_path).stem
 
     # initialize image recognition model
     base_options = python.BaseOptions(model_asset_path=MODEL_PATH)
